@@ -54,6 +54,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -362,7 +363,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -400,7 +401,7 @@ main {
 }
 .nav-desktop {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   align-items: center;
   font-size: 14px;
   font-weight: 600;
@@ -442,9 +443,15 @@ main {
 }
 
 .mobile-menu {
+  /* overlay below the sticky header so opening it doesn't push the page down */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   background: var(--green);
   padding: 8px var(--gutter) 24px;
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - var(--header-h));
+  max-height: calc(100dvh - var(--header-h));
   overflow-y: auto;
   animation: menuIn 0.22s ease;
 }
@@ -1173,7 +1180,7 @@ main {
 .process-grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 30px 20px;
 }
 .step {
@@ -1698,6 +1705,17 @@ a.contact-line:hover {
    Responsive
    ========================================================== */
 
+/* Narrow laptops: tighten the desktop nav so it fits beside the logo and CTA */
+@media (max-width: 1260px) {
+  .nav-desktop {
+    gap: 12px;
+    font-size: 13px;
+  }
+  .header-inner {
+    gap: 12px;
+  }
+}
+
 /* Tablet & small laptop: hamburger menu */
 @media (max-width: 1180px) {
   .nav-desktop,
@@ -1707,9 +1725,16 @@ a.contact-line:hover {
   .burger {
     display: inline-flex;
   }
-}
 
-@media (max-width: 1000px) {
+  /* even rows instead of 3 + 1 / 5 + 1 orphans */
+  .grades-grid,
+  .cat-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .process-line {
     display: none;
   }

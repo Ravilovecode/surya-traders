@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <img src="/images/brand-banner.jpg" alt="PURE GLOW — Trust Beyond Trade" className="footer-logo" loading="lazy" />
+              <img src="/images/brand-banner.jpg" alt="PURE GLOW — Trust Beyond Trade" className="footer-logo" width="960" height="600" loading="lazy" />
               <p>PURE GLOW® by Surya Traders — premium Indian makhana, from India to the world.</p>
             </div>
             <nav aria-label="Quick links">

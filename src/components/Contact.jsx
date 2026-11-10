@@ -21,10 +21,11 @@ const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 function validate(v) {
   const e = {};
+  // Checked in the same order as the fields appear, so focus goes to the first invalid one.
   if (!v.name.trim()) e.name = 'Please enter your name.';
+  if (!v.country) e.country = 'Please select your country.';
   if (!v.email.trim()) e.email = 'Please enter your email.';
   else if (!emailOk(v.email)) e.email = 'Please enter a valid email address.';
-  if (!v.country) e.country = 'Please select your country.';
   if (!v.product) e.product = 'Please select a product.';
   return e;
 }
@@ -97,7 +98,8 @@ export default function Contact() {
 
   const sendEmail = () => {
     if (!check()) return;
-    const subject = `Export inquiry — ${values.product}${values.company ? ` — ${values.company}` : ''}`;
+    const company = values.company.trim();
+    const subject = `Export inquiry — ${values.product}${company ? ` — ${company}` : ''}`;
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       buildMessage(values)
     )}`;

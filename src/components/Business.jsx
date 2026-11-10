@@ -117,7 +117,7 @@ export function Markets() {
         </div>
         <div className="markets-inner">
           <div className="markets-map rv">
-            <img src="/images/world-map.svg" alt="Dotted world map with export routes from Bihar, India" loading="lazy" />
+            <img src="/images/world-map.svg" alt="Dotted world map with export routes from Bihar, India" width="1200" height="440" loading="lazy" />
           </div>
           <div className="markets-regions rv">
             {regions.map((r) => (

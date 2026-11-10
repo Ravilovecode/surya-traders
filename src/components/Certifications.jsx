@@ -80,7 +80,7 @@ export function Catalogue() {
               </a>
             </div>
           </div>
-          <img src="/images/brand-banner.jpg" alt="PURE GLOW — Trust Beyond Trade" className="catalogue-img" loading="lazy" />
+          <img src="/images/brand-banner.jpg" alt="PURE GLOW — Trust Beyond Trade" className="catalogue-img" width="960" height="600" loading="lazy" />
         </div>
       </div>
     </section>
