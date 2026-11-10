@@ -1,4 +1,4 @@
-import { contact, social, whatsappLink } from '../data.js';
+import { contact, photoCredits, social, whatsappLink } from '../data.js';
 import { SocialLinks, WhatsAppIcon } from './Icons.jsx';
 
 export default function Footer() {
@@ -45,6 +45,20 @@ export default function Footer() {
             </span>
             <span>© {new Date().getFullYear()} Surya Traders. All rights reserved.</span>
           </div>
+          {photoCredits.length > 0 && (
+            <p className="footer-credits">
+              {photoCredits.map((c, i) => (
+                <span key={c.url}>
+                  {i > 0 && ' · '}
+                  {c.what}:{' '}
+                  <a href={c.url} target="_blank" rel="noopener noreferrer">
+                    {c.author}, {c.license}
+                  </a>
+                </span>
+              ))}{' '}
+              (Wikimedia Commons)
+            </p>
+          )}
         </div>
       </footer>
 

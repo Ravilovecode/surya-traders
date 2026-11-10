@@ -57,13 +57,13 @@ export const categories = [
   {
     title: 'Raw Makhana',
     text: 'Natural, unroasted popped foxnuts supplied in bulk, graded by size.',
-    image: '',
+    image: '/images/raw-makhana.jpg',
     panel: 'repeating-linear-gradient(45deg,#8B5E3C 0 2px,#A57650 2px 9px)',
   },
   {
     title: 'Handpicked Makhana',
     text: 'Hand-sorted for uniform size and colour — suited to premium retail.',
-    image: '',
+    image: '/images/handpicked-makhana.jpg',
     panel: 'radial-gradient(circle at 30% 30%,#2F6B3E,#14532D 70%)',
   },
   {
@@ -75,9 +75,27 @@ export const categories = [
   {
     title: 'Flavoured Makhana',
     text: 'Roasted and seasoned, in retail-ready packs or under your private label.',
-    image: '',
+    image: '/images/flavoured-makhana.jpg',
     panel: 'radial-gradient(circle at 70% 30%,#E8A54B,#B5541E 75%)',
   },
+];
+
+// Stock product photos from Wikimedia Commons. CC BY-SA photos must stay
+// credited while they are used; remove an entry when you replace its photo.
+export const photoCredits = [
+  {
+    what: 'Raw makhana photo',
+    author: 'FacetsOfNonStickPans',
+    license: 'CC BY-SA 4.0',
+    url: 'https://commons.wikimedia.org/wiki/File:Foxnut_Makhana_-_Nawada_District_-_Bihar_-_1.jpg',
+  },
+  {
+    what: 'Flavoured makhana photo',
+    author: 'FacetsOfNonStickPans',
+    license: 'CC BY-SA 4.0',
+    url: 'https://commons.wikimedia.org/wiki/File:Makhana_(Foxnut)_roasted_with_masala_and_ghee.jpg',
+  },
+  // Handpicked makhana photo: "Phool Makhana" by Miansari66, CC0 (no credit required).
 ];
 
 export const flavours = [
